@@ -74,7 +74,7 @@ private fun ChessMateApp() {
             scope.launch {
                 runCatching {
                     context.contentResolver.openInputStream(uri)?.bufferedReader()?.use { it.readText() }
-                        ?: error("Could not open the selected PGN file.")
+                        ?: throw IllegalStateException("Could not open the selected PGN file.")
                 }.onSuccess {
                     importedPgn = it
                     error = ""
