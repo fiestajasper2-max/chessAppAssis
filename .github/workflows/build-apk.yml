@@ -15,7 +15,9 @@ jobs:
           distribution: temurin
           java-version: '17'
       - uses: android-actions/setup-android@v3
-      - name: Install Android NDK
+        with:
+          packages: 'platform-tools'
+      - name: Install Android SDK components
         run: sdkmanager "ndk;27.2.12479018" "platforms;android-35" "build-tools;35.0.0"
       - name: Build Stockfish for ARM64
         run: |
