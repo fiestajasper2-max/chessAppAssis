@@ -30,7 +30,7 @@ jobs:
           make strip ARCH=armv8 COMP=ndk
           mkdir -p "$GITHUB_WORKSPACE/app/src/main/assets"
           cp stockfish "$GITHUB_WORKSPACE/app/src/main/assets/stockfish"
-          cp ../LICENSE "$GITHUB_WORKSPACE/app/src/main/assets/stockfish-license.txt"
+          cp ../Copying.txt "$GITHUB_WORKSPACE/app/src/main/assets/stockfish-license.txt"
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
